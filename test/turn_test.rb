@@ -29,7 +29,8 @@ class TurnTest < Minitest::Test
     turn1 = Turn.new("Anchorage", card)
     turn2 = Turn.new("Juneau", card)
 
-    assert_equal turn.guess, card.answer
+    refute turn1.correct?
+    assert turn2.correct?
   end
 
   def test_it_gives_feedback
@@ -37,8 +38,8 @@ class TurnTest < Minitest::Test
     turn1 = Turn.new("Anchorage", card)
     turn2 = Turn.new("Juneau", card)
 
-    assert_equal "Incorrect", turn1.guess
-    assert_equal "Correct", turn2.guess
+    assert_equal "Incorrect", turn1.feedback
+    assert_equal "Correct", turn2.feedback
   end
 
 end
