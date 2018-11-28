@@ -1,4 +1,5 @@
 require './lib/deck'
+require './lib/turn'
 
 class Round
 
@@ -7,6 +8,11 @@ class Round
     @deck = deck
     @turns = []
     @current_card = deck.cards.first
+  end
+
+  def take_turn(guess)
+    turns << Turn.new(guess, current_card)
+    turns[0]
   end
 
 end
