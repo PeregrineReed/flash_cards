@@ -1,5 +1,8 @@
 require 'minitest/autorun'
 require 'minitest/pride'
+require './lib/card'
+require './lib/turn'
+require './lib/deck'
 require './lib/round'
 
 class RoundTest < Minitest::Test
@@ -52,7 +55,6 @@ class RoundTest < Minitest::Test
 
     assert_same deck.cards[0], round.current_card
     round.take_turn("Juneau")
-    assert_includes round.turns, card_1
     assert_same deck.cards[0], round.current_card && card_2
   end
 
@@ -113,7 +115,7 @@ class RoundTest < Minitest::Test
     round.take_turn("Venus")
     assert_equal 100.0, round.percent_correct_by_category(:Geography)
     assert_instance_of Float, round.percent_correct_by_category(:Geography)
-    assert_equal 0,round.percent_correct_by_category(:STEM)
+    assert_equal 0, round.percent_correct_by_category(:STEM)
     assert_instance_of Integer, round.percent_correct_by_category(:STEM)
   end
 
