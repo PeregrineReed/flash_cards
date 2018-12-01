@@ -1,6 +1,8 @@
-In what museum in Detroit is Thomas Edison's last breath held within a vial?,Henry Ford Museum,History
+What city is the Henry Ford Museum located where Thomas Edison's last breath is held within a vial?,Detroit,Geography
 In what UK city is the Dyslexia Research Trust located?,Reading,Geography
 What is Yoda's first name?,Minch,Pop Culture
-What fruit has more trade regulations than AK-47's?,Bananas,Pop Culture
+What fruit has more trade regulations than AK-47's?,Bananas,Food
 In what year was Nelson Mandela removed from the US terror watch list?,2008,Politics
 True or False: a tortoise can feel a person touching its shell?,True,Nature
+What food is solid liquid and gaseous all at the same time?,Ice cream,Food
+The Kellogg-Briand Pact an agreement not use war as a joint national policy was signed by the USA the UK and Germany in what year?,1928,Politics
