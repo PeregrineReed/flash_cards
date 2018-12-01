@@ -44,8 +44,6 @@ class Round
       turn.card.category == category
     end
     percent = (number_correct_by_category(category).to_f / (turns_in_category)) * 100
-    percent = percent.round if percent == 0.0
-    percent
   end
 
 end
