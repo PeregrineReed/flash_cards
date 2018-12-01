@@ -1,10 +1,12 @@
 class Deck
 
   attr_accessor :cards
-  attr_reader :count
   def initialize(cards = [])
     @cards = cards
-    @count = cards.count
+  end
+
+  def count
+    cards.count
   end
 
   def cards_in_category(category)

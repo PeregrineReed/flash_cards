@@ -1,10 +1,19 @@
 class Round
 
-  attr_reader :deck, :turns, :current_card
+  attr_reader :deck, :turns
   def initialize(deck)
     @deck = deck
     @turns = []
-    @current_card = deck.cards.first
+  end
+
+  def current_card
+    deck.cards.first
+  end
+
+  def categories
+    deck.cards.uniq do |card|
+      card.category
+    end
   end
 
   def take_turn(guess)
@@ -37,9 +46,10 @@ class Round
     percent
   end
 
-
   def start
 
+    puts ""
+    puts ""
     puts "Welcome! You're playing with #{deck.cards.count} cards"
     puts "-" * 49
     # iterate for each question
@@ -55,12 +65,13 @@ class Round
     end
 
     puts "****** Game over! ******"
-    puts "You had #{number_correct} correct guesses out of #{deck.cards.count} for a total score of #{percent_correct.round(1)}%"
-    #iterate for each category
-    categories = deck.cards.uniq { |card| card.category }
-    category_scores = categories.map do |card|
-      puts "#{card.category.to_s} - #{percent_correct_by_category(card.category)}% correct"
+    puts "You had #{number_correct} correct guesses out of #{deck.cards.count} for a total score of #{percent_correct.to_i}%"
+    
+    categories.each do |card|
+      puts "#{card.category.to_s} - #{percent_correct_by_category(card.category).to_i}% correct"
     end
+    puts ""
+    puts ""
   end
 
 end
